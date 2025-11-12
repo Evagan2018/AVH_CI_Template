@@ -40,7 +40,7 @@ jobs:
         run: |
           mkdir -p logs
           echo "=== vcpkg Artifacts Activation ===" > logs/vcpkg_artifacts.log
-          cd $(dirname ".ci/vcpkg-configuration.json")
+          cd $(dirname "vcpkg-configuration.json")
           vcpkg activate 2>&1 | tee -a $GITHUB_WORKSPACE/logs/vcpkg_artifacts.log || echo "vcpkg activate failed" >> $GITHUB_WORKSPACE/logs/vcpkg_artifacts.log
       - name: Upload tool logs
         if: always()
